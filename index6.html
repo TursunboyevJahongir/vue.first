@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="test/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    {{ title }}
+    <br>
+    <button @click="getContent">get Content</button>
+    <div v-if="showContent">
+        <p>Users Array:</p>
+        <ul>
+            <li v-for="(user,index) in users" :key="index">
+                <p>{{index}}-{{ user }}</p>
+            </li>
+        </ul>
+        <p>Users Object:</p>
+        <ul>
+            <li v-for="(user,index) in ObjUsers" :key="index">
+                <p>{{index}}-{{ user.name }}<br>{{ user.phone }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+<script src=""></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: 'DATA',
+            showContent: false,
+            ObjUsers: [
+                {
+                    name: "Alex",
+                    emil: "Alex@gmail.com",
+                    phone: 998995341236,
+                },
+                {
+                    name: "Jask",
+                    emil: "Jask@gmail.com",
+                    phone: 998995341236,
+                }
+            ],
+            users: ['Alex', 'Jask', 'Victor']
+        },
+        methods: {
+            getContent() {
+                this.showContent = !this.showContent,
+                    console.log(this.user, this.users)
+            }
+        }
+    })
+</script>
+
+</html>

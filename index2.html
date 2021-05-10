@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="test/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    {{ title }}
+    <br>
+    <input type="text" v-model="fname" placeholder="First Name">
+    <input type="text" v-model="lname" placeholder="Last Name">
+    <br>
+    FirstName: {{ fname }}<br>
+    LastName : {{ lname }}<br>
+</div>
+
+</body>
+
+<script src=""></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: 'Inputs',
+            fname: "",
+            lname: ""
+        }
+    })
+</script>
+
+</html>
