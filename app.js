@@ -1,7 +1,7 @@
-Vue.createApp({
-    data(){
-        return {
-            firstName:'John'
-        }
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Привет, Vue!'
     }
-}).mount('#app')
+})
