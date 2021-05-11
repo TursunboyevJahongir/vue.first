@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounted</title>
+    <link rel="stylesheet" type="test/css" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        {{ title }}
+        <button @click="getTitle('hi')">ok</button>
+    </div>
+
+</body>
+
+<script src=""></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title:"inner"
+        },
+        methods:{
+            getTitle(string){
+                alert(string)
+            }
+        },
+        created(){
+            this.getTitle('Created');
+        },
+        mounted(){
+            this.getTitle('Mounted');
+            this.title = 'Mounted';
+        }
+
+    })
+</script>
+
+</html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" type="test/css" href="../main.css">
+    <title>data V-for</title>
+    <link rel="stylesheet" type="test/css" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 </head>
@@ -25,7 +25,7 @@
         <p>Users Object:</p>
         <ul>
             <li v-for="(user,index) in ObjUsers" :key="index">
-                <p>{{index}}-{{ user.name }}<br>{{ user.phone }}</p>
+                <p>{{user.id}}-{{ user.name }}<br>{{ user.phone }}</p>
             </li>
         </ul>
     </div>
@@ -42,13 +42,21 @@
             showContent: false,
             ObjUsers: [
                 {
+                    id: 1,
                     name: "Alex",
                     emil: "Alex@gmail.com",
                     phone: 998995341236,
                 },
                 {
+                    id: 2,
                     name: "Jask",
                     emil: "Jask@gmail.com",
+                    phone: 998995341236,
+                },
+                {
+                    id: 3,
+                    name: "Same",
+                    emil: "same@gmail.com",
                     phone: 998995341236,
                 }
             ],
