@@ -1,15 +1,14 @@
+
 <template>
   <div class="wrapper">
     <div class="wrapper-content">
 
       <section>
         <div class="container">
-
       {{title}}
-
-        <div class="message" v-if='message'>
-            <p>{{message}}</p>
-        </div>
+      <message v-if='message' :message="hello">
+      </message>
+      
         <div class="new-note">
             <input type="text" v-model="note.title">
             <textarea  v-model='note.description'></textarea>
@@ -37,8 +36,13 @@
 </template>
 
 <script>
+import message from '@/components/Messages.vue'
+// import message from './components/Messages.vue';
 
 export default {
+  components:{
+    message
+  },
   data(){
     return{
             title:"hi",
@@ -71,7 +75,7 @@ export default {
                 let {title,description} = this.note;
                 if(title === '') {
                     this.message="message can't blanck";
-                    alert("message can't blanck");
+                    // alert("message can't blanck");
                     return false;
                 }
                 else{
