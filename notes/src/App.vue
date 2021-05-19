@@ -9,7 +9,7 @@
       </message> -->
           <message v-if="message" :message="this.message" />
           <newNote :note="note" @addNote="addNote" />
-          <notes :notes="notes" @addNote="addNote"/>
+          <notes :notes="notes" @remove="removeNote"/>
           
         </div>
       </section>
@@ -75,6 +75,9 @@ export default {
       this.note.title = "";
       this.note.description = "";
     },
+    removeNote(index){
+      this.notes.splice(index,1)
+    }
   },
 };
 </script>

@@ -1,8 +1,13 @@
 <template>
   <div class="notes">
     <div class="note" v-for="(note, index) in notes" :key="index">
-      <div class="note-header">
-        <p>{{ note.title }}</p>
+      <div class="row">
+        <div class="note-header col-12 col-md-5">
+          <p>{{ note.title }}</p>
+        </div>
+        <div class="col-12 col-md-3">
+          <button @click="removeNote(index)">Delete</button>
+        </div>
       </div>
       <div class="note-body col-6 col-md-6">
         <p>{{ note.description }}</p>
@@ -21,9 +26,10 @@ export default {
     },
   },
   methods: {
-    addNote() {
-      this.$emit("addNote", this.note);
-    },
+    removeNote(index){
+      console.log(`id ${index}`)
+      this.$emit('remove',index)
+    }
   },
 };
 </script>
@@ -41,18 +47,14 @@ export default {
   margin-bottom: 20px;
   background-color: #fff;
 }
-.note-header{
-     
-         color: red;
-     
+.note-header {
+  color: red;
 }
 .note-body {
-    border: 1px solid rgba(71, 115, 172, 0.438);
-    margin: 20px 0;
-  
-  
-    font-size: 14;
-    color: rgb(61, 60, 60);
-  
+  border: 1px solid rgba(71, 115, 172, 0.438);
+  margin: 20px 0;
+
+  font-size: 14;
+  color: rgb(61, 60, 60);
 }
 </style>
